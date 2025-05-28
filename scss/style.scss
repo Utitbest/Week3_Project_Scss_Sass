@@ -1,0 +1,53 @@
+
+$primary-color: #0077cc;
+$secondary-color: #f4f4f4;
+$font-stack: 'Segoe UI', sans-serif;
+
+body {
+  font-family: $font-stack;
+  background: $secondary-color;
+  margin: 0;
+  padding: 0;
+
+  h1 {
+    color: $primary-color;
+    padding: 1rem;
+  }
+
+  nav {
+    background: $primary-color;
+    padding: 1rem;
+    a {
+      color: white;
+      margin-right: 10px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  main, form, section, article {
+    padding: 1rem;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

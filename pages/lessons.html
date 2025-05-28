@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: #f5f7fa;
+      color: #333;
+    }
+    h1 {
+      color: #007bff;
+    }
+    h2 {
+      color: #0056b3;
+    }
+    pre {
+      background: #e6e6e6;
+      padding: 1rem;
+      border-left: 5px solid #007bff;
+      overflow-x: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>SCSS & SASS Full Lesson Table Of What I Learn</h1>
+
+  <section>
+    <h2>📘 Beginner Level</h2>
+
+    <h3>✅ Variables</h3>
+    <p>Variables allow you to store values (like colors, spacing, etc.) and reuse them throughout your styles.</p>
+    <pre><code>$primary-color: #3498db;
+
+body {
+  background-color: $primary-color;
+}</code></pre>
+
+    <h3>✅ Nesting</h3>
+    <p>SCSS allows nesting of selectors for better readability and structure.</p>
+    <pre><code>nav {
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+}</code></pre>
+
+    <h3>✅ Comments</h3>
+    <p>Use comments to document your code.</p>
+    <pre><code>// This is a single-line comment
+/* This is a block comment */</code></pre>
+
+    <h3>✅ Compilation</h3>
+    <p>Use the <code>sass</code> command to compile SCSS into CSS:</p>
+    <pre><code>sass style.scss style.css</code></pre>
+  </section>
+
+  <section>
+    <h2>📙 Intermediate Level</h2>
+
+    <h3>🔜 Mixins</h3>
+    <p>Mixins allow you to reuse styles with custom values.</p>
+    <pre><code>@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  @include flex-center;
+}</code></pre>
+
+    <h3>🔜 Functions</h3>
+    <p>Functions return a value and can be used in calculations.</p>
+    <pre><code>@function em($px, $base: 16) {
+  @return $px / $base * 1em;
+}
+
+p {
+  font-size: em(18);
+}</code></pre>
+
+    <h3>🔜 Extend/Inherit</h3>
+    <p>Use <code>@extend</code> to inherit styles from another selector.</p>
+    <pre><code>.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}</code></pre>
+
+    <h3>🔜 Operators</h3>
+    <p>SCSS supports math operations for values.</p>
+    <pre><code>main {
+  width: 100% / 3;
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>📕 Advanced Level</h2>
+
+    <h3>🔜 Partials & @import</h3>
+    <p>Break your SCSS into multiple files and import them using <code>@import</code>.</p>
+    <pre><code>// _buttons.scss
+.button {
+  padding: 10px;
+}
+
+// main.scss
+@import 'buttons';</code></pre>
+
+    <h3>🔜 @use and @forward</h3>
+    <p><code>@use</code> and <code>@forward</code> are modern alternatives to <code>@import</code>.</p>
+    <pre><code>// _config.scss
+$font-stack: Helvetica, sans-serif;
+
+// main.scss
+@use 'config';
+
+body {
+  font-family: config.$font-stack;
+}</code></pre>
+
+    <h3>🔜 Build Tools Integration</h3>
+    <p>SCSS can be integrated with tools like <strong>Vite</strong> and <strong>Webpack</strong> for automated compilation.</p>
+    <p>Example with Vite (in vite.config.js):</p>
+    <pre><code>css: {
+  preprocessorOptions: {
+    scss: {
+      additionalData: `@import "./src/styles/variables.scss";`
+    }
+  }
+}</code></pre>
+
+    <h3>🔜 Real Project Structure</h3>
+    <p>Organize your SCSS like this:</p>
+    <pre><code>scss/
+├── base/
+│   └── _reset.scss
+├── components/
+│   └── _button.scss
+├── layout/
+│   └── _grid.scss
+├── pages/
+│   └── _home.scss
+├── themes/
+│   └── _dark.scss
+├── utils/
+│   ├── _variables.scss
+│   └── _mixins.scss
+└── main.scss</code></pre>
+  </section>
+</body>
+</html>
