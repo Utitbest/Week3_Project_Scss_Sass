@@ -43,10 +43,5 @@ body button {
 body button:hover {
   background-color: rgb(0, 89.25, 153);
 }
-body .idid{
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  text-align: center;
-}
+
 /*# sourceMappingURL=style.css.map */
